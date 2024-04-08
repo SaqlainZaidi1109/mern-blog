@@ -6,10 +6,12 @@ import SignUp from './pages/SignUp'
 import Dashboard from './pages/Dashboard'
 import Projects from './pages/Projects'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
 
 export default function App() {
   return (  
      <BrowserRouter>
+     <Header/>
       <Routes>
       <Route path="/" elements={<Home />}/>
       <Route path="/about" element={<About/>} />
