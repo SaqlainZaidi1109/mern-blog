@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRoutes from "./routes/user.routes.js"
+import authRoutes from "./routes/auth.route.js  "
 
 dotenv.config(); //to connect .env file to database, learn more in .env file
 
@@ -12,6 +13,7 @@ mongoose.connect(process.env.MONGOCSTRING) //since we dont have connection strin
 .catch((err)=>{console.log(err)})
 
 const app = express();
+app.use(express.json()); //this will allow json to input in backend
 
 app.listen(3000, ()=>{
     console.log("Server is running on port 3000!")
@@ -24,3 +26,4 @@ app.listen(3000, ()=>{
 
 //OR
 app.use('/api/user', userRoutes ) //here you will use app.use because you are using get request in user.routes.js, http://localhost:3000/api/user/test
+app.use('/api/auth', authRoutes)
