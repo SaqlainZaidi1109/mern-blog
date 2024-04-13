@@ -27,3 +27,15 @@ app.listen(3000, ()=>{
 //OR
 app.use('/api/user', userRoutes ) //here you will use app.use because you are using get request in user.routes.js, http://localhost:3000/api/user/test
 app.use('/api/auth', authRoutes)
+
+//adding a middleware function for handling errors // error, request, response, and next
+//when you gonna go to next middleware then we will use next
+app.use((err, req, res, next)=>{
+    const statusCode = err.statusCode || 500
+    const message = err.message || "Internal server error"
+    res.status(statusCode).json({
+        success: false,
+        statusCode,
+        message
+    })
+})
