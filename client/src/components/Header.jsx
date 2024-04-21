@@ -9,9 +9,9 @@ export default function Header() {
   const path = useLocation().pathname; //in-order to active Home, about and projects
   return (
     
-    <Navbar className='border-b-2 self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'>
+    <Navbar className='border-b-2 '>
+        <Link className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'>
             {/* <img src="https://static.vecteezy.com/system/resources/previews/013/643/516/large_2x/colorfull-letter-z-in-3d-style-text-effect-free-png.png" class="h-8" alt="Flowbite Logo" /> */}
-        <Link className=''>
             <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white' >Zendrix</span>Blogs
         </Link>
 
